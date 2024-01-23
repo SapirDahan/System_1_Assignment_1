@@ -3,8 +3,8 @@
 #define true 1
 #define false 0
 
-static int digitLength(int);
-static int power(int, int);
+int digitLengthLoop(int);
+int powerLoop(int, int);
 
 int isPalindrome(int num){
     int originalNum = num;
@@ -26,10 +26,10 @@ int isArmstrong(int num){
 
     int armstrong = 0;
     int originalNum = num;
-    int len = digitLength(num);
+    int len = digitLengthLoop(num);
 
     while(num >=0) {
-        armstrong = armstrong + power(num % 10, len);
+        armstrong = armstrong + powerLoop(num % 10, len);
         num = num / 10;
     }
 
@@ -40,7 +40,7 @@ int isArmstrong(int num){
     return false;
 }
 
-static int digitLength(int num){
+int digitLengthLoop(int num){
     int count = 0;
 
     while (num != 0) {
@@ -51,7 +51,7 @@ static int digitLength(int num){
     return count;
 }
 
-static int power(int a, int b){
+int powerLoop(int a, int b){
     int power = 1;
     for(int i = 0; i < b; i++){
         power = power * a;

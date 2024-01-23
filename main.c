@@ -8,6 +8,8 @@ int main() {
     do {
         printf("Enter two positive integers: ");
         scanf("%d %d", &num1, &num2);
+        printf("/n scanf passed");
+
     } while (num1 <= 0 || num2 <= 0);
 
     //Make sure that num2 is not bigger then num1

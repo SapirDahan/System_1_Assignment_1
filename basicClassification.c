@@ -9,7 +9,7 @@ static int digitLength(int);
 
 int isPrime(int num){
     if(num == 1){
-        return false;
+        return true;
     }
 
     for(int i = 2; i <= square(num); i++){

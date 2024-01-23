@@ -55,6 +55,24 @@ build CMakeFiles/systems1.dir/main.c.o: C_COMPILER__systems1_unscanned_Debug /ho
   OBJECT_DIR = CMakeFiles/systems1.dir
   OBJECT_FILE_DIR = CMakeFiles/systems1.dir
 
+build CMakeFiles/systems1.dir/basicClassification.c.o: C_COMPILER__systems1_unscanned_Debug /home/parallels/CLionProjects/systems1/basicClassification.c || cmake_object_order_depends_target_systems1
+  DEP_FILE = CMakeFiles/systems1.dir/basicClassification.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/systems1.dir
+  OBJECT_FILE_DIR = CMakeFiles/systems1.dir
+
+build CMakeFiles/systems1.dir/advancedClassificationLoop.c.o: C_COMPILER__systems1_unscanned_Debug /home/parallels/CLionProjects/systems1/advancedClassificationLoop.c || cmake_object_order_depends_target_systems1
+  DEP_FILE = CMakeFiles/systems1.dir/advancedClassificationLoop.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/systems1.dir
+  OBJECT_FILE_DIR = CMakeFiles/systems1.dir
+
+build CMakeFiles/systems1.dir/advancedClassificationRecursion.c.o: C_COMPILER__systems1_unscanned_Debug /home/parallels/CLionProjects/systems1/advancedClassificationRecursion.c || cmake_object_order_depends_target_systems1
+  DEP_FILE = CMakeFiles/systems1.dir/advancedClassificationRecursion.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/systems1.dir
+  OBJECT_FILE_DIR = CMakeFiles/systems1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target systems1
@@ -63,7 +81,7 @@ build CMakeFiles/systems1.dir/main.c.o: C_COMPILER__systems1_unscanned_Debug /ho
 #############################################
 # Link the executable systems1
 
-build systems1: C_EXECUTABLE_LINKER__systems1_Debug CMakeFiles/systems1.dir/main.c.o
+build systems1: C_EXECUTABLE_LINKER__systems1_Debug CMakeFiles/systems1.dir/main.c.o CMakeFiles/systems1.dir/basicClassification.c.o CMakeFiles/systems1.dir/advancedClassificationLoop.c.o CMakeFiles/systems1.dir/advancedClassificationRecursion.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/systems1.dir
   POST_BUILD = :

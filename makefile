@@ -47,6 +47,5 @@ mainloops: main.o libclassloops.so
 maindrec: main.o libclassrec.so
 	$(CC) $(CFLAGS) -o maindrec main.o -lclassrec -L.
 
-
 clean:
 	rm -f mains mainloops maindrec *.o *.a *.so
