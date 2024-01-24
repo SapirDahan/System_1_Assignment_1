@@ -1,40 +1,51 @@
 #include "NumClass.h"
 
+//Define true and false
 #define true 1
 #define false 0
 
+//Help functions
 int factorial(int);
 int square(int);
 static int digitLength(int);
 
+//Checking if the number is 1 or 2 then return true (in this assigment 1 is prime)
 int isPrime(int num){
-    if(num == 1){
+    if(num == 1 || num == 2){
         return true;
     }
 
+    //Checking if the number is dividing from any of the numbers between 2 and the square of the numbers
     for(int i = 2; i <= square(num); i++){
+
+        //If dividing return false
         if(num % i == 0){
             return false;
         }
     }
+
+    //The number is prime
     return true;
 }
 
 
 int isStrong(int num){
 
-    int strong = 0;
-    int originalNum = num;
+    int strong = 0; //Initialize strong
+    int originalNum = num; //Save the original number
 
+    //For each digit in num calculate the factorial of it and add to strong
     for(int i = 0; i < digitLength(num); i++){
         strong = strong + factorial(num % 10);
         num = num / 10;
     }
 
+    //If strong equals to the original number the number is strong
     if(strong == originalNum){
         return true;
     }
 
+    //The number is not strong
     return false;
 }
 
@@ -51,7 +62,7 @@ int square(int num) {
     return 0;
 }
 
-
+//Calculate the factorial of a number
 int factorial(int num){
 
     int sum = 1;
@@ -62,6 +73,7 @@ int factorial(int num){
     return sum;
 }
 
+//Calculate lhe length of the number
 static int digitLength(int num){
     int count = 0;
 

@@ -2,7 +2,7 @@ Num = NumClass.h
 CFLAGS = -Wall
 gcc = CC
 
-all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains mainloops maindrec
+all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
 .PHONY: all clean
 
 basicClassification_static.o: basicClassification.c $(Num)
@@ -41,11 +41,11 @@ main.o: main.c
 mains: main.o libclassrec.a
 	$(CC) $(CFLAGS) -o mains main.o libclassrec.a
 
-mainloops: main.o libclassloops.so
-	$(CC) $(CFLAGS) -o mainloops main.o -lclassloops -L. -Wl,-rpath=$(shell pwd)
+maindloop: main.o libclassloops.so
+	$(CC) $(CFLAGS) -o maindloop main.o -lclassloops -L. -Wl,-rpath=$(shell pwd)
 
 maindrec: main.o libclassrec.so
 	$(CC) $(CFLAGS) -o maindrec main.o -lclassrec -L. -Wl,-rpath=$(shell pwd)
 
 clean:
-	rm -f mains mainloops maindrec *.o *.a *.so
+	rm -f mains maindloop maindrec *.o *.a *.so

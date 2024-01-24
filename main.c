@@ -2,14 +2,14 @@
 #include "NumClass.h"
 
 int main() {
+
     //Get 2 positive numbers from the user
     int num1, num2;
 
+    //Request 2 numbers from the user until we get 2 positive numbers
     do {
         printf("Enter two positive integers: ");
         scanf("%d %d", &num1, &num2);
-        printf("/n scanf passed");
-
     } while (num1 <= 0 || num2 <= 0);
 
 
@@ -26,10 +26,10 @@ int main() {
     for(int i = num1; i <= num2; i++){
         armstrong = isArmstrong(i);
         if(armstrong){
-            printf(" %d", armstrong);
+            printf(" %d", i);
         }
     }
-    printf("/n");
+    printf("\n");
 
 
     //Find all Palindrome numbers in the range
@@ -38,33 +38,33 @@ int main() {
     for(int i = num1; i <= num2; i++){
         palindrome = isPalindrome(i);
         if(palindrome){
-            printf(" %d", palindrome);
+            printf(" %d", i);
         }
     }
-    printf("/n");
+    printf("\n");
 
-//
+
     //Find all Prime numbers in the range
     printf("The Prime numbers are:");
     int prime;
     for(int i = num1; i <= num2; i++){
         prime = isPrime(i);
         if(prime){
-            printf(" %d", prime);
+            printf(" %d", i);
         }
     }
-    printf("/n");
+    printf("\n");
 
-//
+
     //Find all Strong numbers in the range
     printf("The Strong numbers are:");
     int strong;
     for(int i = num1; i <= num2; i++){
         strong = isStrong(i);
         if(strong){
-            printf(" %d", strong);
+            printf(" %d", i);
         }
     }
-    printf("/n");
+    printf("\n");
 
 }
