@@ -9,13 +9,19 @@ int powerRec(int, int);
 
 int isPalindrome(int num){
 
+    if(num == 0){
+        return true;
+    }
+
     int len = digitLengthRec(num);
     int mostSignificantDigit = num / powerRec(10, len - 1);
     int lessSignificantDigit = num % 10;
     if(mostSignificantDigit == lessSignificantDigit){
-        isPalindrome(num - mostSignificantDigit * powerRec(10, len - 1) - lessSignificantDigit);
+         return isPalindrome((num - mostSignificantDigit * powerRec(10, len - 1))/10);
     }
-    return false;
+    else{
+        return false;
+    }
 }
 
 int isArmstrong(int num){

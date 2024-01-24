@@ -12,6 +12,7 @@ int main() {
 
     } while (num1 <= 0 || num2 <= 0);
 
+
     //Make sure that num2 is not bigger then num1
     if(num1 > num2){
         int tmp = num1;
@@ -42,7 +43,7 @@ int main() {
     }
     printf("/n");
 
-
+//
     //Find all Prime numbers in the range
     printf("The Prime numbers are:");
     int prime;
@@ -54,7 +55,7 @@ int main() {
     }
     printf("/n");
 
-
+//
     //Find all Strong numbers in the range
     printf("The Strong numbers are:");
     int strong;

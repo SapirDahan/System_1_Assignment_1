@@ -28,7 +28,7 @@ int isArmstrong(int num){
     int originalNum = num;
     int len = digitLengthLoop(num);
 
-    while(num >=0) {
+    while(num > 0) {
         armstrong = armstrong + powerLoop(num % 10, len);
         num = num / 10;
     }
