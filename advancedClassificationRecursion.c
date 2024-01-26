@@ -3,32 +3,43 @@
 #define true 1
 #define false 0
 
-int isArmstrongNum(int num, int index, int len);
+int isArmstrongNum(int, int, int);
+int isPalindromeChecker(int, int, int);
+int digitAtLocation(int, int);
 int digitLengthRec(int);
 int powerRec(int, int);
 
+//Checking if the number is palindrome
 int isPalindrome(int num){
+    return isPalindromeChecker(num, 0, digitLengthRec(num) - 1);
+}
 
-    //If num is 0 we finish successfully the recursion
-    if(num == 0){
+//Help to find if a function is a palindrome
+int isPalindromeChecker(int num, int right, int left){
+
+    //Checking if we finished
+    if(left <= right){
         return true;
     }
 
-    int len = digitLengthRec(num); // The length of the number
-    int mostSignificantDigit = num / powerRec(10, len - 1);
-    int lessSignificantDigit = num % 10;
-
-    //The number is the same in its edges of the number
-    if(mostSignificantDigit == lessSignificantDigit){
-         return isPalindrome((num - mostSignificantDigit * powerRec(10, len - 1))/10);
+    //Checking if the edges of the numbers are equals
+    if(digitAtLocation(num, right) == digitAtLocation(num, left)){
+        return isPalindromeChecker(num, right + 1, left - 1);
     }
 
-    //The number is not palindrome
+    //The number is not a palindrome
     else{
         return false;
     }
+
 }
 
+//Finds the digit at a location in a number
+int digitAtLocation(int num, int index){
+    return (num / powerRec(10, index)) % 10;
+}
+
+//Checking if the number is an armstrong number
 int isArmstrong(int num){
 
     int len = digitLengthRec(num); // The length of the number

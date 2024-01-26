@@ -7,7 +7,7 @@ int main() {
     int num1, num2;
 
     //Request 2 numbers from the user 2 positive numbers
-    printf("Enter two positive integers: ");
+    //printf("Enter two positive integers: ");
     scanf("%d %d", &num1, &num2);
 
     //If the two numbers are negatives
@@ -48,7 +48,7 @@ int main() {
 
 
     //Find all Palindrome numbers in the range
-    printf("The Palindrome numbers are:");
+    printf("The Palindromes are:");
     int palindrome;
     for(int i = num1; i <= num2; i++){
         palindrome = isPalindrome(i);
