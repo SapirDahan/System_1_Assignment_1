@@ -1,0 +1,4 @@
+The Armstrong numbers are: 1
+The Palindromes are: 1
+The Prime numbers are: 1
+The Strong numbers are: 1
