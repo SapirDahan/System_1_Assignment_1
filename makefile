@@ -2,7 +2,7 @@ Num = NumClass.h
 CFLAGS = -Wall
 gcc = CC
 
-all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
+all: loops recursives recursived loopd mains maindloop maindrec
 .PHONY: all clean
 
 basicClassification_static.o: basicClassification.c $(Num)
