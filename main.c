@@ -6,11 +6,26 @@ int main() {
     //Get 2 positive numbers from the user
     int num1, num2;
 
-    //Request 2 numbers from the user until we get 2 positive numbers
-    do {
-        printf("Enter two positive integers: ");
-        scanf("%d %d", &num1, &num2);
-    } while (num1 <= 0 || num2 <= 0);
+    //Request 2 numbers from the user 2 positive numbers
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &num1, &num2);
+
+    //If the two numbers are are negatives
+    if(num1 <= 0 && num2 <= 0){
+        printf("The Armstrong numbers are:\n");
+        printf("The Palindromes are:\n");
+        printf("The Prime numbers are:\n");
+        printf("The Strong numbers are:\n");
+    }
+
+    //If 1 of the numbers is negative
+    if(num1 <= 0){
+        num1 = 1;
+    }
+
+    if(num2 <= 0){
+        num2 = 1;
+    }
 
 
     //Make sure that num2 is not bigger then num1

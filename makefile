@@ -30,10 +30,10 @@ advancedClassificationLoop_dynamic.o: advancedClassificationLoop.c $(Num)
 	$(CC) -fPIC $(CFLAGS) -c advancedClassificationLoop.c -o advancedClassificationLoop_dynamic.o
 
 libclassrec.so: basicClassification_dynamic.o advancedClassificationRecursion_dynamic.o
-	$(CC) -shared -o libclassrec.so basicClassification_dynamic.o advancedClassificationRecursion_dynamic.o
+	$(CC) -shared -fPIC -o libclassrec.so basicClassification_dynamic.o advancedClassificationRecursion_dynamic.o
 
 libclassloops.so: basicClassification_dynamic.o advancedClassificationLoop_dynamic.o
-	$(CC) -shared -o libclassloops.so basicClassification_dynamic.o advancedClassificationLoop_dynamic.o
+	$(CC) -shared -fPIC -o libclassloops.so basicClassification_dynamic.o advancedClassificationLoop_dynamic.o
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c -o main.o
