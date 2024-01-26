@@ -35,7 +35,8 @@ int isStrong(int num){
     int originalNum = num; //Save the original number
 
     //For each digit in num calculate the factorial of it and add to strong
-    for(int i = 0; i < digitLength(num); i++){
+    int digitLen = digitLength(num);
+    for(int i = 0; i < digitLen; i++){
         strong = strong + factorial(num % 10);
         num = num / 10;
     }
