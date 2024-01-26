@@ -10,7 +10,7 @@ int main() {
     printf("Enter two positive integers: ");
     scanf("%d %d", &num1, &num2);
 
-    //If the two numbers are are negatives
+    //If the two numbers are negatives
     if(num1 <= 0 && num2 <= 0){
         printf("The Armstrong numbers are:\n");
         printf("The Palindromes are:\n");
