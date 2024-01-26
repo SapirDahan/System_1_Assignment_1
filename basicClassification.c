@@ -7,7 +7,7 @@
 //Help functions
 int factorial(int);
 int square(int);
-static int digitLength(int);
+int digitLength(int);
 
 //Checking if the number is 1 or 2 then return true (in this assigment 1 is prime)
 int isPrime(int num){
@@ -75,7 +75,7 @@ int factorial(int num){
 }
 
 //Calculate lhe length of the number
-static int digitLength(int num){
+int digitLength(int num){
     int count = 0;
 
     while (num != 0) {

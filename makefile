@@ -1,5 +1,5 @@
 Num = NumClass.h
-CFLAGS = -Wall
+CFLAGS = -Wall -fPIC
 CC = gcc
 
 .PHONY: all clean
@@ -10,35 +10,26 @@ recursives: libclassrec.a
 recursived: libclassrec.so
 loopd: libclassloops.so
 
-basicClassification_static.o: basicClassification.c $(Num)
-	$(CC) $(CFLAGS) -c basicClassification.c -o basicClassification_static.o
+basicClassification.o: basicClassification.c $(Num)
+	$(CC) $(CFLAGS) -c basicClassification.c -o basicClassification.o
 
-advancedClassificationLoop_static.o: advancedClassificationLoop.c $(Num)
-	$(CC) $(CFLAGS) -c advancedClassificationLoop.c -o advancedClassificationLoop_static.o
+advancedClassificationLoop.o: advancedClassificationLoop.c $(Num)
+	$(CC) $(CFLAGS) -c advancedClassificationLoop.c -o advancedClassificationLoop.o
 
-advancedClassificationRecursion_static.o: advancedClassificationRecursion.c $(Num)
-	$(CC) $(CFLAGS) -c advancedClassificationRecursion.c -o advancedClassificationRecursion_static.o
+advancedClassificationRecursion.o: advancedClassificationRecursion.c $(Num)
+	$(CC) $(CFLAGS) -c advancedClassificationRecursion.c -o advancedClassificationRecursion.o
 
-libclassloops.a: basicClassification_static.o advancedClassificationLoop_static.o
-	ar -rcs libclassloops.a basicClassification_static.o advancedClassificationLoop_static.o
+libclassloops.a: basicClassification.o advancedClassificationLoop.o
+	ar -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
 
-libclassrec.a: basicClassification_static.o advancedClassificationRecursion_static.o
-	ar -rcs libclassrec.a basicClassification_static.o advancedClassificationRecursion_static.o
+libclassrec.a: basicClassification.o advancedClassificationRecursion.o
+	ar -rcs libclassrec.a basicClassification.o advancedClassificationRecursion.o
 
-basicClassification_dynamic.o: basicClassification.c $(Num)
-	$(CC) -fPIC $(CFLAGS) -c basicClassification.c -o basicClassification_dynamic.o
+libclassrec.so: basicClassification.o advancedClassificationRecursion.o
+	$(CC) -shared -fPIC -o libclassrec.so basicClassification.o advancedClassificationRecursion.o
 
-advancedClassificationRecursion_dynamic.o: advancedClassificationRecursion.c $(Num)
-	$(CC) -fPIC $(CFLAGS) -c advancedClassificationRecursion.c -o advancedClassificationRecursion_dynamic.o
-
-advancedClassificationLoop_dynamic.o: advancedClassificationLoop.c $(Num)
-	$(CC) -fPIC $(CFLAGS) -c advancedClassificationLoop.c -o advancedClassificationLoop_dynamic.o
-
-libclassrec.so: basicClassification_dynamic.o advancedClassificationRecursion_dynamic.o
-	$(CC) -shared -fPIC -o libclassrec.so basicClassification_dynamic.o advancedClassificationRecursion_dynamic.o
-
-libclassloops.so: basicClassification_dynamic.o advancedClassificationLoop_dynamic.o
-	$(CC) -shared -fPIC -o libclassloops.so basicClassification_dynamic.o advancedClassificationLoop_dynamic.o
+libclassloops.so: basicClassification.o advancedClassificationLoop.o
+	$(CC) -shared -fPIC -o libclassloops.so basicClassification.o advancedClassificationLoop.o
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c -o main.o
