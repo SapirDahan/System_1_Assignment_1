@@ -1,6 +1,6 @@
 Num = NumClass.h
 CFLAGS = -Wall
-gcc = CC
+CC = gcc
 
 all: loops recursives recursived loopd mains maindloop maindrec
 .PHONY: all clean
