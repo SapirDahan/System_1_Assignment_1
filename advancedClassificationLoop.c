@@ -14,7 +14,7 @@ int isPalindrome(int num){
 
     //Reverse the number
     while(num > 0){
-        reverseNum = reverseNum + (num % 10);
+        reverseNum = reverseNum * 10 + (num % 10);
         num = num / 10;
     }
 

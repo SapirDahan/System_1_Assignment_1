@@ -16,6 +16,7 @@ int main() {
         printf("The Palindromes are:\n");
         printf("The Prime numbers are:\n");
         printf("The Strong numbers are:\n");
+        return 0;
     }
 
     //If 1 of the numbers is negative
